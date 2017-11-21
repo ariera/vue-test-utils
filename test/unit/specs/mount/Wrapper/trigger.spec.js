@@ -12,6 +12,18 @@ describe('trigger', () => {
     info.restore()
   })
 
+  // it('causes change handler on select elemnt to fire when wrapper.trigger("change") is called one of its options', () => {
+  //   const wrapper = mount(ComponentWithEvents)
+  //   // const button = wrapper.find('select option[value="1"]')
+  //   // button.trigger('change')
+
+  //   const select = wrapper.find('select').element
+  //   select.value = '1'
+  //   select.dispatchEvent(new Event('change'))
+
+  //   expect(wrapper.emitted().input[0][0]).to.equal("1")
+  // })
+
   it('causes click handler to fire when wrapper.trigger("click") is called on a Component', () => {
     const clickHandler = sinon.stub()
     const wrapper = mount(ComponentWithEvents, {

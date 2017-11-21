@@ -5,6 +5,10 @@
     <div @click="toggleActive" v-bind:class="{ toggle: true, active: isActive }" />
     <input class="keydown" type="text" @keydown="keydownHandler" />
     <input class="keydown-enter" type="text" @keydown.enter="keydownHandler" />
+    <select @change="selectHandler">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
   </div>
 </template>
 
@@ -35,7 +39,11 @@
       },
       toggleActive () {
         this.isActive = !this.isActive
-      }
+      },
+      selectHandler (event) {
+        this.$emit('input', event.target.value)
+      },
+
     }
   }
 </script>
